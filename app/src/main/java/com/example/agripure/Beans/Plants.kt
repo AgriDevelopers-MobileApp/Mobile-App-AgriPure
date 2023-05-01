@@ -1,7 +1,9 @@
 package com.example.agripure.Beans
 
+import java.io.Serializable
 
-class Plants {
+
+class Plants : Serializable {
     val id: Long
     val name: String
     val image: String
