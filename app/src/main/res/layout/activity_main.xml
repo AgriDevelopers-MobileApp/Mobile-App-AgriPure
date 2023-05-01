@@ -21,7 +21,9 @@
         android:textAlignment="gravity"
         android:textSize="25dp"
         android:fontFamily="@font/montserrat_bold"
-        android:textColor="@color/white"/>
+        android:textColor="@color/white"
+        android:gravity="center_vertical"
+        />
 
 
     <Switch
@@ -79,10 +81,12 @@
         android:layout_height="52dp"
         android:layout_margin="40dp"
         android:layout_marginTop="15dp"
+        android:padding="15dp"
         android:background="@drawable/cajitas_edit_text"
-        android:hint="   Enter e-mail"
+        android:hint="Enter e-mail"
         android:fontFamily="@font/montserrat_semibold"
         android:textColor="@color/gris"
+        android:inputType="textEmailAddress"
         />
 
     <!--esto es password-->
@@ -103,28 +107,19 @@
         android:layout_height="52dp"
         android:layout_margin="40dp"
         android:layout_marginTop="15dp"
+        android:padding="15dp"
         android:background="@drawable/cajitas_edit_text"
-        android:hint="   Enter password"
+        android:hint="Enter password"
         android:fontFamily="@font/montserrat_semibold"
         android:textColor="@color/gris"
+        android:inputType="textPassword"
         />
-    <TextView
-        android:layout_width="331dp"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="45dp"
-        android:layout_marginTop="-40dp"
-        android:layout_marginBottom="-40dp"
-        android:text="Forgot your password?"
-        android:fontFamily="@font/montserrat_bold"
-        android:textColor="@color/celeste"
-        android:textSize="10dp" />
 
     <!--esto es boton log in-->
     <Button
         android:id="@+id/btnLogIn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="50dp"
         android:backgroundTint="@color/verde"
         android:text="Log In"
         app:cornerRadius="20dp"
