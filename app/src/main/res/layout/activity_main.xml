@@ -114,12 +114,23 @@
         android:textColor="@color/gris"
         android:inputType="textPassword"
         />
+    <TextView
+        android:layout_width="331dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="45dp"
+        android:layout_marginTop="-40dp"
+        android:layout_marginBottom="-40dp"
+        android:text="Forgot your password?"
+        android:fontFamily="@font/montserrat_bold"
+        android:textColor="@color/celeste"
+        android:textSize="10dp" />
 
     <!--esto es boton log in-->
     <Button
         android:id="@+id/btnLogIn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
         android:backgroundTint="@color/verde"
         android:text="Log In"
         app:cornerRadius="20dp"
