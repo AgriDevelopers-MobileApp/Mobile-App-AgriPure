@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/tabPlants"
+        android:icon="@drawable/img_plant"
+        android:title="Plants"
+        app:showAsAction="always" />
+
+    <item
+        android:id="@+id/tabCalendar"
+        android:icon="@drawable/img_calendar"
+        android:title="Calendar"
+        app:showAsAction="always" />
+
+    <item
+        android:id="@+id/tabSpecialist"
+        android:icon="@drawable/img_specialist"
+        android:title="Specialists"
+        app:showAsAction="always" />
+
+    <item
+        android:id="@+id/tabSettings"
+        android:icon="@drawable/img_settings"
+        android:title="Settings"
+        app:showAsAction="always" />
+</menu>

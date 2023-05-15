@@ -16,8 +16,5 @@ class PlantsAdapter(val plantsList: List<Plants>): RecyclerView.Adapter<PlantsVi
         holder.render(item)
     }
 
-
-
-
     override fun getItemCount(): Int = plantsList.size
 }

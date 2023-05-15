@@ -8,6 +8,7 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="fondo">#FF242424</color>
+    <color name="bar_navigation">#1D1D1D</color>
     <color name="verde">#FF2F992F</color>
     <color name="gris">#FF7E7E7E</color>
     <color name="medio_black">#FF191919</color>

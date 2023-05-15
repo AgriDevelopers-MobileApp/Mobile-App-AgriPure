@@ -1,26 +1,64 @@
 package com.example.agripure
 
-import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.Adapter
-import android.widget.Button
+import androidx.activity.viewModels
+import androidx.fragment.app.Fragment
+import androidx.fragment.app.viewModels
+import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.agripure.Beans.Plants
+import com.google.android.material.bottomnavigation.BottomNavigationView
 
 class HomeActivity : AppCompatActivity() {
+
+    private lateinit var viewModel: HomeViewModel
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_home)
 
+        viewModel = ViewModelProvider(this).get(HomeViewModel::class.java)
+        var homeFragment = HomeFragment()
+        var calendarFragment = CalendarFragment()
+        var specialistFragment = SpecialistFragment()
+        var settingsFragment = SettingsFragment()
+
+        val bottomNavigationView: BottomNavigationView = findViewById(R.id.bottom_navigation_view)
+
+        bottomNavigationView.setOnNavigationItemSelectedListener {
+            when (it.itemId){
+                R.id.tabPlants->{
+                    setCurrentFragment(homeFragment)
+                    true
+                }
+                R.id.tabCalendar->{
+                    setCurrentFragment(calendarFragment)
+                    true
+                }
+                R.id.tabSpecialist->{
+                    setCurrentFragment(specialistFragment)
+                    true
+                }
+                R.id.tabSettings->{
+                    setCurrentFragment(settingsFragment)
+                    true
+                }
+                else -> false
+            }
+        }
+
         getPlants()
     }
 
+    private fun setCurrentFragment(fragment: Fragment){
+        supportFragmentManager.beginTransaction().apply {
+            replace(R.id.fragment_container, fragment)
+            commit()
+        }
+    }
     fun getPlants() {
-
         val plantsList = mutableListOf<Plants>()
-
         plantsList.add(
             Plants(1,
                 "Cauliflower",
@@ -58,9 +96,6 @@ class HomeActivity : AppCompatActivity() {
                 "12",
                 "Apple tree pests can affect different organs of the tree, such as fruits, leaves, branches or roots, with fruit damage being the most visible and causing the most losses to the farmer during the harvest. There is a wide group of species considered pests, among which the apple moth or carpocapsa, the two-spotted mite, the aphid and the thrips stand out.", 5, 5)
         )
-
-        val recycler = findViewById<RecyclerView>(R.id.recyclerPlants)
-        recycler.layoutManager = LinearLayoutManager(applicationContext)
-        recycler.adapter = PlantsAdapter(plantsList)
+        viewModel.plantList = plantsList
     }
 }

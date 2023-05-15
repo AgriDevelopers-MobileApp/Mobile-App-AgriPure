@@ -7,20 +7,19 @@
     app:cardElevation="8dp"
     app:cardCornerRadius="20dp"
     android:layout_margin="10dp"
-    android:padding="20dp"
+    android:padding="10dp"
     app:cardBackgroundColor="@color/green">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:padding="15dp">
+        android:padding="10dp">
 
         <ImageView
             android:layout_width="match_parent"
-            android:layout_height="150dp"
-            android:id="@+id/imgPlant"
-            />
+            android:layout_height="wrap_content"
+            android:id="@+id/imgPlant"/>
 
         <TextView
             android:layout_width="match_parent"
@@ -28,23 +27,21 @@
             android:id="@+id/txtName"
             android:padding="5dp"
             android:text="Cauliflower"
-            android:textSize="28dp"
+            android:textSize="18dp"
             android:textColor="@color/white"
             android:textAlignment="center"
             android:fontFamily="@font/montserrat_semibold"/>
         <Button
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Details"
-            android:layout_marginTop="5dp"
             android:layout_gravity="center"
             android:padding="15dp"
             app:backgroundTint="#CF8509"
             android:id="@+id/btnDetails"
+            android:textSize="10dp"
             />
 
     </LinearLayout>
-
-
 
 </androidx.cardview.widget.CardView>

@@ -15,13 +15,23 @@ class MainActivity : AppCompatActivity() {
 
         val switchOnOff:Switch=findViewById(R.id.switchOnOff)
 
-        val btnLogin: Button = findViewById(R.id.btnLogIn)
 
-        btnLogin.setOnClickListener {
-            val intent = Intent(this, HomeActivity::class.java)
-            startActivity(intent)
+        switchOnOff.setOnCheckedChangeListener{ _, isChecked ->
+            if(isChecked){
+                val fragmentSignIn = SignInFragment()
+                supportFragmentManager.beginTransaction().apply {
+                    replace(R.id.fragment_container_login, fragmentSignIn)
+                    commit()
+                }
+            }
+            else{
+                val loginFragment = LoginFragment()
+                supportFragmentManager.beginTransaction().apply {
+                    replace(R.id.fragment_container_login, loginFragment)
+                    commit()
+                }
+            }
         }
-
 
 
     }

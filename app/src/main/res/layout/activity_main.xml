@@ -33,145 +33,24 @@
         android:layout_gravity="center"
         android:layout_marginTop="30dp"
         android:layout_marginBottom="-10dp"
+        android:scaleX="1"
+        android:scaleY="1"
         android:showText="true"
         android:textOff="Log In"
         android:textOn="Sign In"
         android:thumb="@drawable/thumb"
         android:thumbTint="@color/verde"
-        android:scaleX="1"
-        android:scaleY="1"
         android:track="@drawable/track"
         android:trackTint="@color/medio_black"
-        />
+        tools:ignore="UseSwitchCompatOrMaterialXml" />
 
-   <!-- <androidx.appcompat.widget.SwitchCompat
-        android:id="@+id/switchOnOff"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerVertical="true"
-        android:layout_marginLeft="60dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginBottom="-10dp"
-        android:fontFamily="@font/montserrat_bold"
-        android:textColor="@color/black"
-        android:textOff="Log In"
-        android:textOn="Sign Up"
-        android:thumb="@drawable/thumb"
-        app:showText="true"
-        app:switchMinWidth="300dp"
-        app:track="@drawable/track" />-->
-
-
-
-    <!--esto es email-->
-    <TextView
-        android:layout_width="331dp"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="45dp"
-        android:layout_marginTop="30dp"
-        android:layout_marginBottom="-40dp"
-        android:text="E-mail"
-        android:fontFamily="@font/montserrat_bold"
-        android:textColor="@color/white"
-        android:textSize="20dp" />
-
-    <EditText
-        android:id="@+id/txtemail"
+    <androidx.fragment.app.FragmentContainerView
         android:layout_width="match_parent"
-        android:layout_height="52dp"
-        android:layout_margin="40dp"
-        android:layout_marginTop="15dp"
-        android:padding="15dp"
-        android:background="@drawable/cajitas_edit_text"
-        android:hint="Enter e-mail"
-        android:fontFamily="@font/montserrat_semibold"
-        android:textColor="@color/gris"
-        android:inputType="textEmailAddress"
-        />
+        android:layout_height="match_parent"
+        android:layout_marginTop="10dp"
+        android:id="@+id/fragment_container_login"
+        android:name="com.example.agripure.LoginFragment"
+        tools:layout ="@layout/fragment_login">
 
-    <!--esto es password-->
-    <TextView
-        android:layout_width="331dp"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="45dp"
-        android:layout_marginTop="-20dp"
-        android:layout_marginBottom="-40dp"
-        android:text="Password"
-        android:fontFamily="@font/montserrat_bold"
-        android:textColor="@color/white"
-        android:textSize="20dp" />
-
-    <EditText
-        android:id="@+id/txtpassword"
-        android:layout_width="match_parent"
-        android:layout_height="52dp"
-        android:layout_margin="40dp"
-        android:layout_marginTop="15dp"
-        android:padding="15dp"
-        android:background="@drawable/cajitas_edit_text"
-        android:hint="Enter password"
-        android:fontFamily="@font/montserrat_semibold"
-        android:textColor="@color/gris"
-        android:inputType="textPassword"
-        />
-    <TextView
-        android:layout_width="331dp"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="45dp"
-        android:layout_marginTop="-40dp"
-        android:layout_marginBottom="-40dp"
-        android:text="Forgot your password?"
-        android:fontFamily="@font/montserrat_bold"
-        android:textColor="@color/celeste"
-        android:textSize="10dp" />
-
-    <!--esto es boton log in-->
-    <Button
-        android:id="@+id/btnLogIn"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="50dp"
-        android:backgroundTint="@color/verde"
-        android:text="Log In"
-        app:cornerRadius="20dp"
-        android:layout_marginLeft="40dp"
-        android:layout_marginRight="40dp"
-        android:fontFamily="@font/montserrat_bold"/>
-    <!--esto es la division-->
-
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="or with"
-        android:layout_marginTop="20dp"
-        android:textColor="@color/white"
-        android:textAlignment="center"
-        android:textSize="18dp"/>
-
-    <!--estas son las imagenes del log in-->
-
-
-    <ImageView
-        android:layout_width="53dp"
-        android:layout_height="51dp"
-        android:layout_marginLeft="50dp"
-        android:layout_marginTop="30dp"
-        android:background="@color/white"
-        android:src="@drawable/img_fb" />
-
-    <ImageView
-        android:layout_width="53dp"
-        android:layout_height="51dp"
-        android:layout_marginLeft="180dp"
-        android:layout_marginTop="-50dp"
-        android:background="@color/white"
-        android:src="@drawable/img_google" />
-
-    <ImageView
-        android:layout_width="53dp"
-        android:layout_height="51dp"
-        android:layout_marginLeft="310dp"
-        android:layout_marginTop="-50dp"
-        android:background="@color/white"
-        android:src="@drawable/img_apple" />
+    </androidx.fragment.app.FragmentContainerView>
 </LinearLayout>

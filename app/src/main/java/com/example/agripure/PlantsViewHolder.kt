@@ -5,7 +5,10 @@ import android.view.View
 import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat.startActivity
+import androidx.lifecycle.ViewModel
+import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.RecyclerView
 import com.example.agripure.Beans.Plants
 import com.squareup.picasso.Picasso
@@ -23,12 +26,18 @@ class PlantsViewHolder(view: View) : RecyclerView.ViewHolder(view){
         plantName.text = plantModel.name
 
         Picasso.get().load(plantModel.image)
-            .fit().into(plantImage)
+            .resize(350,250)
+            .centerCrop().into(plantImage)
+
+        val viewModel = ViewModelProvider(context as AppCompatActivity).get(HomeViewModel::class.java)
 
         plantDetails.setOnClickListener {
-                val intent = Intent(context, PlantDetailsActivity::class.java)
-            intent.putExtra("plant", plantModel)
-            context.startActivity(intent)
+            viewModel.plant = plantModel
+            val fragmentDetails = PlantDetailFragment()
+            val transaction = (context as AppCompatActivity).supportFragmentManager.beginTransaction()
+            transaction.replace(R.id.fragment_container, fragmentDetails)
+            transaction.addToBackStack(null)
+            transaction.commit()
         }
     }
 }
